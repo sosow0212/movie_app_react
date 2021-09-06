@@ -9,11 +9,10 @@ class App extends React.Component {
     movies: []
   };
 
-
   // Fetchinig Movies from API
   getMovies = async () => {
     const { data: { data: { movies } } } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
-    this.setState({ isLoading: false, movies })
+    this.setState({ isLoading: false, movies });
   } // API에서 data-data에 영화 데이터가 있음
 
   componentDidMount() {
